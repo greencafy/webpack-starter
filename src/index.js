@@ -104,12 +104,87 @@ bod = {
   observaciones: "Cuenta validada",
 };
 
-fetch("http://localhost:8080/RespuestaEstadoCuenta", {
+bodyAltaCuenta = {
+  nombre: "mia",
+  apellidoPaterno: "wlfs",
+  apelidoMaterno: "wlfs"
+}
+bodyPersonasFisicas = {
+
+  cuentaFisicas: "cuentaPreuba"
+}
+bodylotes = {
+
+  CuentasMorales:"prueba"
+}
+
+bodyCuentasdePersonasMorales = {
+  cuenta: "646180110400000010",
+  empresa: "BRANDME",
+  rfcCurp: "SAHE900414AC8",
+  firma: "P2Q+JC+XxEfsrSklJpObxl9mfjldhaio/hMNg7p1Rm3wcmBW9Y9f0Zw38mH1oxv8bmFyrKaZwGQgyJZ4pvetv1PSDHRf1n0jlVr9oAPC/oKHU8Zv5RI5RS5+aE7h1/fJs3l46SFJmxZAepTd9iJB5A2v7kAofD7tOC4gvtQYwwk=",
+  nombre: "EDUARDO SA DE CV",
+  pais: "187",
+  fechaConstitucion: "20200101",
+  entidadFederativa: "9",
+  actividadEconomica: "31"
+}
+
+
+fetch("http://localhost:8001/RespuestaEstadoCuenta", {
   method: "PUT",
   headers: {
     "Content-type": "application/json",
   },
   body: JSON.stringify(bod),
+}).then((res) => {
+  res.json().then((res) => {
+    console.log(res);
+  });
+});
+
+fetch("http://localhost:8001/altaCuenta", {
+  method: "PUT",
+  headers: {
+    "Content-type": "application/json",
+  },
+  body: JSON.stringify(bodyAltaCuenta),
+}).then((res) => {
+  res.json().then((res) => {
+    console.log(res);
+  });
+});
+
+fetch("http://localhost:8080/PersonasfísicasPorLotes", {
+  method: "PUT",
+  headers: {
+    "Content-type": "application/json",
+  },
+  body: JSON.stringify(bodyPersonasFisicas),
+}).then((res) => {
+  res.json().then((res) => {
+    console.log(res);
+  });
+});
+
+fetch("http://localhost:8080/CuentasdePersonasMorales", {
+  method: "PUT",
+  headers: {
+    "Content-type": "application/json",
+  },
+  body: JSON.stringify(bodyCuentasdePersonasMorales),
+}).then((res) => {
+  res.json().then((res) => {
+    console.log(res);
+  });
+});
+
+fetch("http://localhost:8001/CuentasdePersonasMoralesporLotes", {
+  method: "PUT",
+  headers: {
+    "Content-type": "application/json",
+  },
+  body: JSON.stringify(bodylotes),
 }).then((res) => {
   res.json().then((res) => {
     console.log(res);
