@@ -194,3 +194,5 @@ fetch("http://localhost:8001/CuentasdePersonasMoralesporLotes", {
 
 
 console.log("hola mundo");
+
+console.log("hola mundo");
