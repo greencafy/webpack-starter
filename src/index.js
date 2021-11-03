@@ -193,3 +193,4 @@ fetch("http://localhost:8001/CuentasdePersonasMoralesporLotes", {
 
 
 
+
